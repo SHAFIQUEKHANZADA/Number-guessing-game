@@ -8,9 +8,15 @@ let gusse = await inquirer.prompt([{
         type: "number",
         message: "Guess a number between 1 to 5:"
     }]);
-if (gusse.guss === num) {
-    console.log(chalk.underline.bgGreenBright("Congrats, You guessed right number!"));
+if (gusse.guss > num) {
+    console.log(chalk.underline.bgBlueBright("Your number is high!"));
+}
+else if (gusse.guss < num) {
+    console.log(chalk.underline.bgBlueBright("Your number is Low!"));
+}
+else if (gusse.guss === num) {
+    console.log(chalk.underline.bgBlueBright("Congats, You guessed the  right number!"));
 }
 else {
-    console.log(chalk.underline.bgBlueBright("You guessed wrong number, please try again!"));
+    console.log(chalk.underline.bgCyanBright("You guessed wrong number, please try again!"));
 }
